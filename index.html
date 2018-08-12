@@ -4,11 +4,11 @@
 <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-widnoth, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Simple Sidebar - Start Bootstrap Template</title>
+    <title>Aozora Reader</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -79,6 +79,20 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+    // Cross Domain Ajax ajax()メソッド
+    $.ajax({
+        url: "https://www.aozora.gr.jp/cards/000035/files/236_19996.html",
+        crossDomain: true
+    }).then(
+        // 1つめは通信成功時のコールバック
+        function (data) {
+            $("#results").append(data);
+        },
+        // 2つめは通信失敗時のコールバック
+        function () {
+            console.log("error.");
+        }
+    );
     </script>
 
 </body>
