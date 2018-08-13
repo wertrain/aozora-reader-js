@@ -89,8 +89,8 @@
             $("#results").append(data);
         },
         // 2つめは通信失敗時のコールバック
-        function () {
-            console.log("error.");
+        function (error) {
+            console.log("error." + error);
         }
     );
     </script>
